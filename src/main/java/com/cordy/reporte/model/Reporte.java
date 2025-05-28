@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 
 public class Reporte {
 
-    @Column(nullable=false)
+    @Id
     private String codigo;
 
     @Column(nullable=false)
