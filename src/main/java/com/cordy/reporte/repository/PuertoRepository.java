@@ -1,9 +1,11 @@
 package com.cordy.reporte.repository;
 
-import com.cordy.reporte.model.Reporte;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.cordy.reporte.model.Puerto;
+
 @Repository
-public interface ReporteRepository extends JpaRepository <Reporte, String>{
+public interface PuertoRepository extends JpaRepository<Puerto, Integer> {
+
 }

@@ -1,6 +1,8 @@
 package com.cordy.reporte.model;
 
 
+import java.sql.Date;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,27 +15,31 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name= "reporte")
-@Data
-@NoArgsConstructor
+@Table(name="boleta")
 @AllArgsConstructor
-@Schema(description = "Reporte")
-public class Reporte {
+@NoArgsConstructor
+@Data
+public class Boleta {
 
     @Id
-    private String codigo;
+    private String idBoleta;
 
-    @Column(nullable=false)
-    private String descripcion;
+    @Column(name="monto")
+    private double monto;
 
-    @Column(nullable=false)
-    private String fecha;
-
-    @Column(nullable=false)
-    private String codigoFuncionario;
+    @Column(name="fecha_emision")
+    private Date fecha_emision;
 
     @ManyToOne
     @JoinColumn(name = "id_funcionario", nullable = false)
     private Funcionario funcionario;
+
+    @ManyToOne
+    @JoinColumn(name = "cod_buque", nullable = false)
+    private Buque buque;
+
+    @ManyToOne
+    @JoinColumn(name = "id_puerto", nullable = false)
+    private Puerto puerto;
 
 }
