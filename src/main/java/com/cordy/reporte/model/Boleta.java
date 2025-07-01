@@ -3,6 +3,7 @@ package com.cordy.reporte.model;
 
 import java.sql.Date;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
